@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using MauiApp1.Controls;
+using MauiApp1.Handlers;
+using Microsoft.Extensions.Logging;
 
 namespace MauiApp1;
 
@@ -13,7 +15,11 @@ public static class MauiProgram
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-			});
+			})
+			.ConfigureMauiHandlers(handlers =>
+            {
+                handlers.AddHandler(typeof(MyEditor), typeof(MyEditorHandler));
+            });
 
 #if DEBUG
 		builder.Logging.AddDebug();
