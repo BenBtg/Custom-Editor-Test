@@ -18,11 +18,7 @@ namespace MauiApp1.Handlers;
         {
         };
 
-        public static CommandMapper<MyEditor, MyEditorHandler> CommandMapper = new(ViewCommandMapper)
-        {
-        };
-
-        public MyEditorHandler() : base(PropertyMapper, CommandMapper)
+        public MyEditorHandler() : base(PropertyMapper)
         {
         }
     }
